@@ -1,0 +1,120 @@
+body {
+    margin: 0;
+    font-family: MiSans, sans-serif;
+    background: linear-gradient(180deg, #00b1ff40, #ffffff) no-repeat;
+}
+
+a {
+    color: unset;
+    text-decoration: none;
+    transition: all 0.5s;
+}
+
+a:hover {
+    color: #ff386e;
+}
+
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: #0000001a;
+}
+
+::-webkit-scrollbar-thumb {
+    -webkit-box-shadow: inset 0 0 6px #00000080;
+}
+
+::selection {
+    background: #000;
+    color: #fff
+}
+
+.bg {
+    background: linear-gradient(45deg, #ffffff99, #ffffffcc), url("https://api.imlazy.ink/img") no-repeat;
+    background-size: cover;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: -3;
+    top: 0;
+}
+
+/* Index box */
+
+.main-box {
+    background-color: #ffffff66;
+    backdrop-filter: blur(5px);
+    box-shadow: 0 0 100px #b0b0b0;
+    margin: 25% auto auto auto;
+    width: 60%;
+}
+
+.box-left {
+    border-right: 1px solid;
+    text-align: center;
+    padding: 25px 10% 0.1px 11%
+}
+
+.box-left img {
+    border-radius: 50%;
+    width: 100%;
+    box-shadow: 0 0 10px #aaa;
+    cursor: wait;
+}
+
+.box-left h1 {
+    font-weight: 400;
+}
+
+.box-content {
+    margin: 2% 0 0 -1.5%;
+    border-left: 1px solid;
+    border-top: 1px solid;
+    width: 74%;
+    max-height: 72%;
+    overflow-y: auto;
+    position: fixed;
+}
+
+.box-content p {
+    padding: 0;
+    margin: 10px;
+}
+
+.box-item {
+    padding: 3px 8px;
+    border: 1px solid;
+    margin: 10px 0 0 10px;
+    display: inline-block;
+    transition: all 0.4s;
+}
+
+.box-item:hover {
+    padding: 3px 15px;
+    box-shadow: 0 0 10px #afafaf;
+}
+
+/* Nav */
+.nav-bar {
+    margin: 0 0 0 -2%;
+    padding-left: 0;
+    max-width: 100%;
+    display: flex;
+}
+
+.nav-item {
+    list-style-type: none;
+    width: 100%;
+    padding: 1% 4% 1% 4%;
+    display: inline-grid;
+    text-align: center;
+}
+
+.nav-active {
+    border-bottom: 1px solid;
+    border-left: 1px solid;
+    border-right: 1px solid;
+    font-weight: 500;
+}
