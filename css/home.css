@@ -47,7 +47,7 @@ a:hover {
     background-color: #ffffff66;
     backdrop-filter: blur(5px);
     box-shadow: 0 0 100px #b0b0b0;
-    margin: 25% auto auto auto;
+    margin: 25% auto 25% auto;
     width: 60%;
 }
 
@@ -62,6 +62,12 @@ a:hover {
     width: 100%;
     box-shadow: 0 0 10px #aaa;
     cursor: wait;
+}
+
+.box-left img:hover {
+    transform: rotate(360deg);
+    transition-delay: 0.2s;
+    transition-duration: 1s;
 }
 
 .box-left h1 {
@@ -117,4 +123,58 @@ a:hover {
     border-left: 1px solid;
     border-right: 1px solid;
     font-weight: 500;
+}
+
+/* Phone */
+@media (max-width: 768px) {
+    .container {
+        padding: 0!important;
+    }
+
+    .bg {
+        background: linear-gradient(45deg, #ffffff99, #ffffffcc), url("https://api.imlazy.ink/img-phone") no-repeat;
+        background-size: cover;
+    }
+
+    .main-box {
+        width: 80%;
+    }
+
+    .box-left {
+        border: 0;
+    }
+    
+    .box-content {
+        border-top: 0;
+        border-left: 0;
+        position: unset;
+        margin: 0;
+        width: 88%;
+    }
+
+    .nav-bar {
+        margin: 0;
+    }
+
+    .nav-item {
+        border-bottom: 1px solid;
+    }
+
+    .nav-active {
+        border-bottom: 0;
+        border-top: 1px solid;
+    }
+
+    .box-item a {
+        display: block;
+    }
+
+    #blogの {
+        width: 100%;
+        text-align: center;
+    }
+
+    #blogの .box-item {
+        margin: 10px;
+    }
 }
