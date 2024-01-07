@@ -2,7 +2,7 @@
 var typed = new Typed('#hi', {
     strings: [
         "Lazy.",
-        "from Guangxi, China.",
+        "from GuangXi, China.",
         "a student.",
         "good at fish.",
         "......?"

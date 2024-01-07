@@ -62,12 +62,12 @@ a:hover {
     width: 100%;
     box-shadow: 0 0 10px #aaa;
     cursor: wait;
+    transition-delay: 0.2s;
+    transition-duration: 1s;
 }
 
 .box-left img:hover {
     transform: rotate(360deg);
-    transition-delay: 0.2s;
-    transition-duration: 1s;
 }
 
 .box-left h1 {
