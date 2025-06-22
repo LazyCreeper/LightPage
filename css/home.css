@@ -147,17 +147,9 @@ a:hover {
 
 /* Phone */
 @media (max-width: 768px) {
-    .container {
-        padding: 0 !important;
-    }
-
     .bg {
         background: linear-gradient(45deg, #ffffff99, #ffffffcc), url("https://api.imlazy.ink/img-phone") no-repeat;
         background-size: cover;
-    }
-
-    .main-box {
-        width: 80%;
     }
 
     .box-left {
@@ -238,6 +230,12 @@ a:hover {
         .bg {
             background: linear-gradient(45deg, #00000099, #000000cc), url("https://api.imlazy.ink/img-phone") no-repeat;
             background-size: cover;
+        }
+
+        .main-box {
+            background-color: unset;
+            box-shadow: unset;
+            backdrop-filter: none;
         }
 
     }

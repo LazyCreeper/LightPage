@@ -22,73 +22,71 @@
 <body>
 	<div class="bg"></div>
 
-	<div id="app">
-		<div class="container">
-			<div class="row justify-content-center h-screen">
-				<div class="col-lg-7 col-md-12 main-box align-self-center">
-					<div class="row">
-						<div class="col-md-3">
-							<div class="box-left">
-								<img src="https://q1.qlogo.cn/g?b=qq&nk=2211717435&s=640" alt="Avatar" title="不可以rua！">
-								<h1>Lazy</h1>
-							</div>
-
+	<div id="app" class="container">
+		<div class="row justify-content-center h-screen">
+			<div class="col-lg-7 col-md-12 main-box align-self-center">
+				<div class="row ">
+					<div class="col-md-3">
+						<div class="box-left">
+							<img src="https://q1.qlogo.cn/g?b=qq&nk=2211717435&s=640" alt="Avatar" title="不可以rua！">
+							<h1>Lazy</h1>
 						</div>
-						<div class="col-md-9">
-							<div class="box-right">
-								<ul class="nav-bar">
-									<li class="nav-item" :class="{'nav-active': curC === 'homeの'}">
-										<a href="javascript:;" @click="navShow('homeの')">Home</a>
-									</li>
-									<li class="nav-item" :class="{'nav-active': curC === 'blogの'}">
-										<a href="javascript:;" @click="navShow('blogの')">Blog</a>
-									</li>
-									<li class="nav-item" :class="{'nav-active': curC === 'projectsの'}">
-										<a href="javascript:;" @click="navShow('projectsの')">Projects</a>
-									</li>
-									<li class="nav-item">
-										<a href="https://api.imlazy.ink" target="_blank">API</a>
-									</li>
-								</ul>
 
-								<transition name="slide-x" mode="out-in" @enter="onEnter" @before-leave="onBeforeLeave">
+					</div>
+					<div class="col-md-9">
+						<div class="box-right">
+							<ul class="nav-bar">
+								<li class="nav-item" :class="{'nav-active': curC === 'homeの'}">
+									<a href="javascript:;" @click="navShow('homeの')">Home</a>
+								</li>
+								<li class="nav-item" :class="{'nav-active': curC === 'blogの'}">
+									<a href="javascript:;" @click="navShow('blogの')">Blog</a>
+								</li>
+								<li class="nav-item" :class="{'nav-active': curC === 'projectsの'}">
+									<a href="javascript:;" @click="navShow('projectsの')">Projects</a>
+								</li>
+								<li class="nav-item">
+									<a href="https://api.imlazy.ink" target="_blank">API</a>
+								</li>
+							</ul>
 
-									<div class="box-content" v-if="curC === 'homeの'">
-										<p>Hello, I'm <span id="hi">Lazy.</span></p>
-										<p>Age: ??</p>
-										<p>Date of birth: 12-22(Lunar calendar)</p>
-										<p>E-mail: <a href="mailto:lazy@lazy.ink">lazy@lazy.ink</a></p>
-										<p>Contact me: <a href="http://wpa.qq.com/msgrd?v=3&uin=2211717435&site=qq&menu=yes"
-												target="_blank">QQ</a>
-											| <a href="https://space.bilibili.com/333413683" target="_blank">bilibili</a> |
-											<a href="https://github.com/LazyCreeper" target="_blank">Github</a> [<a
-												href="https://github.com/LazyCreeper/LightPage" target="_blank" style="color: #858585;">This
-												Project</a>]
+							<transition name="slide-x" mode="out-in" @enter="onEnter" @before-leave="onBeforeLeave">
+
+								<div class="box-content" v-if="curC === 'homeの'">
+									<p>Hello, I'm <span id="hi">Lazy.</span></p>
+									<p>Age: ??</p>
+									<p>Date of birth: 12-22(Lunar calendar)</p>
+									<p>E-mail: <a href="mailto:lazy@lazy.ink">lazy@lazy.ink</a></p>
+									<p>Contact me: <a href="http://wpa.qq.com/msgrd?v=3&uin=2211717435&site=qq&menu=yes"
+											target="_blank">QQ</a>
+										| <a href="https://space.bilibili.com/333413683" target="_blank">bilibili</a> |
+										<a href="https://github.com/LazyCreeper" target="_blank">Github</a> [<a
+											href="https://github.com/LazyCreeper/LightPage" target="_blank" style="color: #858585;">This
+											Project</a>]
+									</p>
+									<p>Copyright &copy; {{ new Date().getFullYear() }} Lazy all right reserved</p>
+								</div>
+
+								<div class="box-content" v-else-if="curC === 'blogの'" @>
+									<div id="blogs">
+										<p v-if="!blogs.length">加载不出？试试访问：<a href="https://blog.imlazy.ink:233/"
+												target="_blank">https://blog.imlazy.ink:233/</a>
 										</p>
-										<p>Copyright &copy; {{ new Date().getFullYear() }} Lazy all right reserved</p>
-									</div>
-
-									<div class="box-content" v-else-if="curC === 'blogの'" @>
-										<div id="blogs">
-											<p v-if="!blogs.length">加载不出？试试访问：<a href="https://blog.imlazy.ink:233/"
-													target="_blank">https://blog.imlazy.ink:233/</a>
-											</p>
-											<div class="box-item" v-for="(item, i ) in blogs" :key="i">
-												<b>{{ item.title }}</b>
-												->&nbsp;&nbsp;<a :href="item.link" target="_blank">Read More</a>
-											</div>
+										<div class="box-item" v-for="(item, i ) in blogs" :key="i">
+											<b>{{ item.title }}</b>
+											->&nbsp;&nbsp;<a :href="item.link" target="_blank">Read More</a>
 										</div>
 									</div>
+								</div>
 
-									<div class="box-content" v-else-if="curC === 'projectsの'">
-										<div class="box-item" v-for="(item, i ) in projects" :key="i">
-											<a v-bind="item" target="_blank">
-											</a>
-										</div>
+								<div class="box-content" v-else-if="curC === 'projectsの'">
+									<div class="box-item" v-for="(item, i ) in projects" :key="i">
+										<a v-bind="item" target="_blank">
+										</a>
 									</div>
-								</transition>
+								</div>
+							</transition>
 
-							</div>
 						</div>
 					</div>
 				</div>
