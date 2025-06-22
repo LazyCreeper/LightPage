@@ -1,75 +1,68 @@
-//Typed.js
-var typed = new Typed('#hi', {
-    strings: [
-        "Lazy.",
-        "from GuangXi, China.",
-        "a student.",
-        "good at fish.",
-        "......?"
-    ],
-    typeSpeed: 100,
-    loop: true,
-});
-
-window.onload = function () {
-    Vue.createApp({
-        data: () => ({
-            isShow: false,
-        }),
-        methods: {
-            show() {
-                this.isShow = true;
-            },
-            hide() {
-                this.isShow = false;
-            }
-        }
-    }).mount('#app');
+const AppConfig = {
+  data: () => ({
+    isShow: false
+  }),
+  methods: {
+    initTyped() {
+      new Typed('#hi', {
+        strings: ['Lazy.', 'from GuangXi, China.', 'a student.', 'good at fish.', '......?'],
+        typeSpeed: 100,
+        loop: true
+      })
+    }
+  },
+  mounted() {
+    this.initTyped()
+  }
 }
+
+Vue.createApp(AppConfig).mount('#app')
 
 //Nav links
 function goHome() {
-    $("#home").addClass("nav-active");
-    $("#blog").removeClass("nav-active");
-    $("#projects").removeClass("nav-active");
-    $("#homeの").show();
-    $("#blogの").hide();
-    $("#projectsの").hide();
+  $('#home').addClass('nav-active')
+  $('#blog').removeClass('nav-active')
+  $('#projects').removeClass('nav-active')
+  $('#homeの').show()
+  $('#blogの').hide()
+  $('#projectsの').hide()
 }
 
 function goBlog() {
-    $("#blog").addClass("nav-active");
-    $("#home").removeClass("nav-active");
-    $("#projects").removeClass("nav-active");
-    $("#blogの").show();
-    $("#homeの").hide();
-    $("#projectsの").hide();
+  $('#blog').addClass('nav-active')
+  $('#home').removeClass('nav-active')
+  $('#projects').removeClass('nav-active')
+  $('#blogの').show()
+  $('#homeの').hide()
+  $('#projectsの').hide()
 
-    $.get("https://blog.imlazy.ink:233/index.php/feed/", function (data) {
-        $('#blogs').empty();
-        $(data).find('item').each(function () {
-            var $item = $(this);
-            var title = $item.find('title').text();
-            var link = $item.find('link').text();
-            //var description = $item.find('description').text();
-            //var pubDate = $item.find('pubDate').text();
-            var html = "<div class=\"box-item\">";
-            html += "<b>" + title + "</b>";
-            //html += "<em>" + timeString(pubDate) + "</em>";
-            //html += "<p>" + description + "</p>";
-            html += "&nbsp;&nbsp;->&nbsp;&nbsp;<a href=\"" + link + "\" target=\"_blank\">Read More</a>";
-            html += "</div>";
+  $.get('https://blog.imlazy.ink:233/index.php/feed/', function (data) {
+    $('#blogs').empty()
+    $(data)
+      .find('item')
+      .each(function () {
+        var $item = $(this)
+        var title = $item.find('title').text()
+        var link = $item.find('link').text()
+        //var description = $item.find('description').text();
+        //var pubDate = $item.find('pubDate').text();
+        var html = '<div class="box-item">'
+        html += '<b>' + title + '</b>'
+        //html += "<em>" + timeString(pubDate) + "</em>";
+        //html += "<p>" + description + "</p>";
+        html += '&nbsp;&nbsp;->&nbsp;&nbsp;<a href="' + link + '" target="_blank">Read More</a>'
+        html += '</div>'
 
-            $('#blogs').append(html);
-        });
-    });
+        $('#blogs').append(html)
+      })
+  })
 }
 
 function goProjects() {
-    $("#projects").addClass("nav-active");
-    $("#blog").removeClass("nav-active");
-    $("#home").removeClass("nav-active");
-    $("#projectsの").show();
-    $("#blogの").hide();
-    $("#homeの").hide();
+  $('#projects').addClass('nav-active')
+  $('#blog').removeClass('nav-active')
+  $('#home').removeClass('nav-active')
+  $('#projectsの').show()
+  $('#blogの').hide()
+  $('#homeの').hide()
 }
