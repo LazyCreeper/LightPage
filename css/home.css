@@ -162,6 +162,12 @@ a:hover {
 
     .box-left {
         border: 0;
+        padding: 10%
+    }
+
+    .box-left img {
+        width: 30svw;
+        min-width: 150px;
     }
 
     .box-content {

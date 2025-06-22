@@ -1,5 +1,6 @@
 const AppConfig = {
   data: () => ({
+    typed: null,
     curC: 'homeの',
     blogs: [],
     projects: []
@@ -13,15 +14,15 @@ const AppConfig = {
       return this.isDev ? 'http://127.0.0.1:8088' : ''
     }
   },
+
   methods: {
     initTyped() {
-      new Typed('#hi', {
+      this.typed = new Typed('#hi', {
         strings: ['Lazy.', 'from GuangXi, China.', 'a student.', 'good at fish.', '......?'],
         typeSpeed: 100,
         loop: true
       })
     },
-
     navShow(n) {
       this.curC = n
     },
@@ -42,6 +43,18 @@ const AppConfig = {
     async getProjects() {
       const { data } = await (await fetch(this.apiUrl + '/api/projects')).json()
       this.projects = data
+    },
+
+    onEnter() {
+      if (this.curC === 'homeの') {
+        this.initTyped()
+      }
+    },
+
+    onBeforeLeave() {
+      if (this.curC !== 'homeの') {
+        this.typed.destroy()
+      }
     }
   },
   mounted() {

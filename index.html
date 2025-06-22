@@ -50,7 +50,9 @@
 										<a href="https://api.imlazy.ink" target="_blank">API</a>
 									</li>
 								</ul>
-								<transition name="slide-x" mode="out-in">
+
+								<transition name="slide-x" mode="out-in" @enter="onEnter" @before-leave="onBeforeLeave">
+
 									<div class="box-content" v-if="curC === 'homeの'">
 										<p>Hello, I'm <span id="hi">Lazy.</span></p>
 										<p>Age: ??</p>
