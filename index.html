@@ -10,10 +10,10 @@
 	<meta name="description" content="Hello, I'm Lazy. Welcome to my homepage.">
 	<meta name="author" content="Lazy">
 	<title>Lazy's Home</title>
-	<link id="favicon" rel="icon" href="https://q1.qlogo.cn/g?b=qq&nk=2211717435&s=640">
+	<link id="favicon" rel="icon" href="https://q1.qlogo.cn/g?b=qq&nk=2211717435&s=100">
 	<link rel="stylesheet" href="./css/home.css">
 	<link
-		href="https://font.sec.miui.com/font/css?family=MiSans:400,500,600,700:Chinese_Simplify,Latin,Chinese_Traditional&amp;display=swap"
+		href="https://font.sec.miui.com/font/css?family=MiSans:100,200,300,400,500,600,700:Chinese_Simplify,Latin,Chinese_Traditional&amp;display=swap"
 		rel="stylesheet">
 	<link href="https://lf9-cdn-tos.bytecdntp.com/cdn/expire-1-M/bootstrap/5.1.3/css/bootstrap-grid.min.css"
 		type="text/css" rel="stylesheet" />
@@ -21,77 +21,89 @@
 
 <body>
 	<div class="bg"></div>
-	<div class="container">
-		<div class="main-box">
-			<div class="row">
-				<div class="col-md-3">
-					<div class="box-left">
-						<img src="https://q1.qlogo.cn/g?b=qq&nk=2211717435&s=640" alt="Avatar" title="不可以rua！">
-						<h1>Lazy</h1>
-					</div>
 
-				</div>
-				<div class="col-md-9">
-					<div class="box-right">
-						<ul class="nav-bar">
-							<li class="nav-item nav-active" id="home">
-								<a href="javascript:goHome();">Home</a>
-							</li>
-							<li class="nav-item" id="blog">
-								<a href="javascript:goBlog();">Blog</a>
-							</li>
-							<li class="nav-item" id="projects">
-								<a href="javascript:goProjects();">Projects</a>
-							</li>
-							<li class="nav-item">
-								<a href="https://api.imlazy.ink" target="_blank">API</a>
-							</li>
-						</ul>
-						<div class="box-content" id="homeの">
-							<p>Hello, I'm <span id="hi"></span></p>
-							<p>Age: ??</p>
-							<p>Date of birth: 12-22(Lunar calendar)</p>
-							<p>E-mail: <a href="mailto:2211717435@qq.com">2211717435@qq.com</a></p>
-							<p>Contact me: <a href="http://wpa.qq.com/msgrd?v=3&uin=2211717435&site=qq&menu=yes"
-									target="_blank">QQ</a> | <a href="https://space.bilibili.com/333413683" target="_blank">bilibili</a> |
-								<a href="https://github.com/LazyCreeper" target="_blank">Github</a> [<a
-									href="https://github.com/LazyCreeper/LightPage" target="_blank" style="color: #858585;">This
-									Project</a>]
-							</p>
-							<p>Copyright &copy; <year></year> Lazy all right reserved</p>
+	<div id="app">
+		<div class="container">
+			<div class="row justify-content-center h-screen">
+				<div class="col-lg-7 col-md-12 main-box align-self-center">
+					<div class="row">
+						<div class="col-md-3">
+							<div class="box-left">
+								<img src="https://q1.qlogo.cn/g?b=qq&nk=2211717435&s=640" alt="Avatar" title="不可以rua！">
+								<h1>Lazy</h1>
+							</div>
+
 						</div>
+						<div class="col-md-9">
+							<div class="box-right">
+								<ul class="nav-bar">
+									<li class="nav-item nav-active" id="home">
+										<a href="javascript:goHome();">Home</a>
+									</li>
+									<li class="nav-item" id="blog">
+										<a href="javascript:goBlog();">Blog</a>
+									</li>
+									<li class="nav-item" id="projects">
+										<a href="javascript:goProjects();">Projects</a>
+									</li>
+									<li class="nav-item">
+										<a href="https://api.imlazy.ink" target="_blank">API</a>
+									</li>
+								</ul>
+								<div class="box-content" id="homeの">
+									<p>Hello, I'm <span id="hi"></span></p>
+									<p>Age: ??</p>
+									<p>Date of birth: 12-22(Lunar calendar)</p>
+									<p>E-mail: <a href="mailto:2211717435@qq.com">2211717435@qq.com</a></p>
+									<p>Contact me: <a href="http://wpa.qq.com/msgrd?v=3&uin=2211717435&site=qq&menu=yes"
+											target="_blank">QQ</a>
+										| <a href="https://space.bilibili.com/333413683" target="_blank">bilibili</a> |
+										<a href="https://github.com/LazyCreeper" target="_blank">Github</a> [<a
+											href="https://github.com/LazyCreeper/LightPage" target="_blank" style="color: #858585;">This
+											Project</a>]
+									</p>
+									<p>Copyright &copy; <year></year> Lazy all right reserved</p>
+								</div>
 
-						<div class="box-content" id="blogの">
-							<div id="blogs" style="display: inline-grid;">
-								<p>加载不出？试试访问：<a href="https://blog.imlazy.ink:233/" target="_blank">https://blog.imlazy.ink:233/</a></p>
-							</div>
-						</div>
+								<div class="box-content" id="blogの">
+									<div id="blogs" style="display: inline-grid;">
+										<p>加载不出？试试访问：<a href="https://blog.imlazy.ink:233/" target="_blank">https://blog.imlazy.ink:233/</a>
+										</p>
+									</div>
+								</div>
 
-						<div class="box-content" id="projectsの">
-							<div class="box-item"><a href="https://github.com/LazyCreeper/MiraiUI" target="_blank">MiraiUI</a></div>
-							<div class="box-item"><a href="https://skin.fxcraft.cn" target="_blank">FxCraft</a></div>
-							<div class="box-item"><a href="https://blog.imlazy.ink:233/" target="_blank">Lazy's Blog</a>
+								<div class="box-content" id="projectsの">
+									<div class="box-item"><a href="https://github.com/LazyCreeper/MiraiUI" target="_blank">MiraiUI</a>
+									</div>
+									<div class="box-item"><a href="https://skin.fxcraft.cn" target="_blank">FxCraft</a></div>
+									<div class="box-item"><a href="https://blog.imlazy.ink:233/" target="_blank">Lazy's Blog</a>
+									</div>
+									<div class="box-item"><a href="https://api.imlazy.ink" target="_blank">雫 API</a></div>
+									<div class="box-item"><a href="https://mcsm.imlazy.ink" target="_blank">MCSManager 文档</a>
+									</div>
+									<div class="box-item"><a href="https://live.lazy.ink" target="_blank">Lazy's Live</a></div>
+									<div class="box-item"><a href="https://blog.imlazy.ink:233/index.php/archives/335/"
+											target="_blank">MCSM9
+											Vivid主题</a></div>
+									<div class="box-item"><a href="https://blog.imlazy.ink:233/index.php/archives/253/"
+											target="_blank">MCSM9
+											二次元主题</a></div>
+									<div class="box-item"><a href="https://blog.imlazy.ink:233/index.php/archives/38/"
+											target="_blank">宝塔面板二次元主题</a>
+									</div>
+									<div class="box-item"><a href="https://github.com/synctv-org" target="_blank">SyncTV</a></div>
+									<div class="box-item"><a href="https://blacklist.lo-li.gay" target="_blank">A Blacklist</a></div>
+								</div>
 							</div>
-							<div class="box-item"><a href="https://api.imlazy.ink" target="_blank">雫 API</a></div>
-							<div class="box-item"><a href="https://mcsm.imlazy.ink" target="_blank">MCSManager 文档</a>
-							</div>
-							<div class="box-item"><a href="https://live.lazy.ink" target="_blank">Lazy's Live</a></div>
-							<div class="box-item"><a href="https://blog.imlazy.ink:233/index.php/archives/335/" target="_blank">MCSM9
-									Vivid主题</a></div>
-							<div class="box-item"><a href="https://blog.imlazy.ink:233/index.php/archives/253/" target="_blank">MCSM9
-									二次元主题</a></div>
-							<div class="box-item"><a href="https://blog.imlazy.ink:233/index.php/archives/38/"
-									target="_blank">宝塔面板二次元主题</a></div>
-							<div class="box-item"><a href="https://github.com/synctv-org" target="_blank">SyncTV</a></div>
-							<div class="box-item"><a href="https://blacklist.lo-li.gay" target="_blank">A Blacklist</a></div>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
-	</div>
 
+	<script src="https://lf6-cdn-tos.bytecdntp.com/cdn/expire-1-M/vue/3.2.31/vue.global.prod.min.js"
+		type="application/javascript"></script>
 	<script src="https://lf9-cdn-tos.bytecdntp.com/cdn/expire-1-M/jquery/3.6.0/jquery.min.js"
 		type="application/javascript"></script>
 	<script src="https://lf9-cdn-tos.bytecdntp.com/cdn/expire-1-M/bootstrap/5.1.3/js/bootstrap.min.js"

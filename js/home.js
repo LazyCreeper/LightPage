@@ -11,6 +11,22 @@ var typed = new Typed('#hi', {
     loop: true,
 });
 
+window.onload = function () {
+    Vue.createApp({
+        data: () => ({
+            isShow: false,
+        }),
+        methods: {
+            show() {
+                this.isShow = true;
+            },
+            hide() {
+                this.isShow = false;
+            }
+        }
+    }).mount('#app');
+}
+
 //Nav links
 function goHome() {
     $("#home").addClass("nav-active");
@@ -43,7 +59,7 @@ function goBlog() {
             //html += "<p>" + description + "</p>";
             html += "&nbsp;&nbsp;->&nbsp;&nbsp;<a href=\"" + link + "\" target=\"_blank\">Read More</a>";
             html += "</div>";
-            
+
             $('#blogs').append(html);
         });
     });
