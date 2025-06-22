@@ -236,3 +236,19 @@ a:hover {
 
     }
 }
+
+
+.slide-x-enter-active,
+.slide-x-leave-active {
+    transition: all 0.25s ease-out;
+}
+
+.slide-x-enter-from {
+    opacity: 0;
+    transform: translateX(30px);
+}
+
+.slide-x-leave-to {
+    opacity: 0;
+    transform: translateX(-30px);
+}
