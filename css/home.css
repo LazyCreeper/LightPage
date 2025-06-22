@@ -2,12 +2,14 @@ body {
     margin: 0;
     font-family: MiSans, sans-serif;
     background: linear-gradient(180deg, #00b1ff40, #ffffff) no-repeat;
+    --border-color: #6d6d6d61;
 }
 
 a {
     color: unset;
     text-decoration: none;
     transition: all 0.5s;
+    filter: opacity(0.9);
 }
 
 a:hover {
@@ -29,6 +31,10 @@ a:hover {
 ::selection {
     background: #000;
     color: #fff
+}
+
+.divider {
+    border-bottom: 1px solid var(--border-color);
 }
 
 .bg {
@@ -57,6 +63,7 @@ a:hover {
 
 .box-left {
     border-right: 1px solid;
+    border-color: var(--border-color);
     text-align: center;
     padding: 25px 10% 10%
 }
@@ -101,6 +108,7 @@ a:hover {
     margin: 2.4% 0;
     border-left: 1px solid;
     border-top: 1px solid;
+    border-color: var(--border-color);
     width: 100%;
 }
 
@@ -109,12 +117,17 @@ a:hover {
     margin: 10px;
 }
 
+.box-content b {
+    font-weight: 600;
+}
+
 .box-item {
     padding: 3px 8px;
     border: 1px solid;
     margin: 10px 0 0 10px;
     display: inline-block;
     transition: all 0.4s;
+    border-color: rgb(37 37 37 / 55%)
 }
 
 .box-item:hover {
@@ -143,6 +156,7 @@ a:hover {
     border-left: 1px solid;
     border-right: 1px solid;
     font-weight: 500;
+    border-color: var(--border-color);
 }
 
 /* Phone */
@@ -224,6 +238,10 @@ a:hover {
     .main-box {
         background-color: #00000066;
         box-shadow: 0 0 20px #00000054;
+    }
+
+    .box-item {
+        border-color: rgb(198 198 198 / 55%);
     }
 
     @media (max-width: 768px) {
