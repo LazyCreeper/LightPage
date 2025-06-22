@@ -79,26 +79,10 @@
 									</div>
 
 									<div class="box-content" v-else-if="curC === 'projectsの'">
-										<div class="box-item"><a href="https://github.com/LazyCreeper/MiraiUI" target="_blank">MiraiUI</a>
+										<div class="box-item" v-for="(item, i ) in projects" :key="i">
+											<a v-bind="item" target="_blank">
+											</a>
 										</div>
-										<div class="box-item"><a href="https://skin.fxcraft.cn" target="_blank">FxCraft</a></div>
-										<div class="box-item"><a href="https://blog.imlazy.ink:233/" target="_blank">Lazy's Blog</a>
-										</div>
-										<div class="box-item"><a href="https://api.imlazy.ink" target="_blank">雫 API</a></div>
-										<div class="box-item"><a href="https://mcsm.imlazy.ink" target="_blank">MCSManager 文档</a>
-										</div>
-										<div class="box-item"><a href="https://live.lazy.ink" target="_blank">Lazy's Live</a></div>
-										<div class="box-item"><a href="https://blog.imlazy.ink:233/index.php/archives/335/"
-												target="_blank">MCSM9
-												Vivid主题</a></div>
-										<div class="box-item"><a href="https://blog.imlazy.ink:233/index.php/archives/253/"
-												target="_blank">MCSM9
-												二次元主题</a></div>
-										<div class="box-item"><a href="https://blog.imlazy.ink:233/index.php/archives/38/"
-												target="_blank">宝塔面板二次元主题</a>
-										</div>
-										<div class="box-item"><a href="https://github.com/synctv-org" target="_blank">SyncTV</a></div>
-										<div class="box-item"><a href="https://blacklist.lo-li.gay" target="_blank">A Blacklist</a></div>
 									</div>
 								</transition>
 

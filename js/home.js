@@ -1,8 +1,18 @@
 const AppConfig = {
   data: () => ({
     curC: 'homeの',
-    blogs: []
+    blogs: [],
+    projects: []
   }),
+  computed: {
+    isDev() {
+      const devServers = ['127.0.0.1', 'localhost']
+      return devServers.indexOf(window.location.hostname) !== -1
+    },
+    apiUrl() {
+      return this.isDev ? 'http://127.0.0.1:8088' : ''
+    }
+  },
   methods: {
     initTyped() {
       new Typed('#hi', {
@@ -27,10 +37,16 @@ const AppConfig = {
         title: item.getElementsByTagName('title')[0].textContent,
         link: item.getElementsByTagName('link')[0].textContent
       }))
+    },
+
+    async getProjects() {
+      const { data } = await (await fetch(this.apiUrl + '/api/projects')).json()
+      this.projects = data
     }
   },
   mounted() {
     this.initTyped()
+    this.getProjects()
     this.getBlog()
   }
 }
